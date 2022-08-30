@@ -4,7 +4,7 @@
 int main() {
 	std::cout << "Hello from Raft Engine Editor" << std::endl;
 
-	RaftEngine::sayHello();
+	RaftEngine::checkGLFW();
 
 	std::cin.get();
 }

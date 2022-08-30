@@ -1,5 +1,5 @@
 namespace RaftEngine {
 
-	void sayHello();
+	int checkGLFW();
 
 }
