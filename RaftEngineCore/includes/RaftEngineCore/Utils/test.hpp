@@ -1,0 +1,5 @@
+namespace RaftEngine {
+
+	void sayHello();
+
+}
