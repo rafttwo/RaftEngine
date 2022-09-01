@@ -1,5 +1,0 @@
-namespace RaftEngine {
-
-	int checkGLFW();
-
-}

@@ -1,12 +1,22 @@
-#include <iostream>
-#include "RaftEngineCore/Utils/test.hpp"
+#pragma once
+
+#include "RaftEngineCore/Application.hpp"
 #include <GLFW/glfw3.h>
+#include <iostream>
 
 namespace RaftEngine {
+    Application::Application()
+    {
 
-	int checkGLFW() {
-		std::cout << "Hello from Raft Engine Core" << std::endl;
+    }
 
+    Application::~Application()
+    {
+
+    }
+
+    int Application::start(unsigned int window_width, unsigned int window_height, const char* title)
+    {
         GLFWwindow* window;
 
         /* Initialize the library */
@@ -14,7 +24,7 @@ namespace RaftEngine {
             return -1;
 
         /* Create a windowed mode window and its OpenGL context */
-        window = glfwCreateWindow(640, 480, "Hello World", NULL, NULL);
+        window = glfwCreateWindow(window_width, window_height, title, NULL, NULL);
         if (!window)
         {
             glfwTerminate();
@@ -35,10 +45,11 @@ namespace RaftEngine {
 
             /* Poll for and process events */
             glfwPollEvents();
+
+            on_update();
         }
 
         glfwTerminate();
         return 0;
-	}
-
+    }
 }

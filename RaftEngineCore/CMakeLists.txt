@@ -2,9 +2,17 @@ cmake_minimum_required(VERSION 3.12)
 
 set(ENGINE_PROJECT_NAME RaftEngineCore)
 
+set(ENGINE_PUBLIC_INCLUDE
+	includes/RaftEngineCore/Application.hpp
+)
+
+set(ENGINE_PRIVATE_INCLUDE
+	src/RaftEngineCore/Application.cpp
+)
+
 add_library(${ENGINE_PROJECT_NAME} STATIC
-	src/RaftEngineCore/Utils/test.cpp
-	includes/RaftEngineCore/Utils/test.hpp
+	${ENGINE_PUBLIC_INCLUDE}
+	${ENGINE_PRIVATE_INCLUDE}
 )
 
 target_include_directories(${ENGINE_PROJECT_NAME} PUBLIC includes)
