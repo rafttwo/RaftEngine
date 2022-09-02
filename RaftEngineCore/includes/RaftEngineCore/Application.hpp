@@ -1,3 +1,5 @@
+#pragma once
+
 namespace RaftEngine {
 	class Application
 	{
