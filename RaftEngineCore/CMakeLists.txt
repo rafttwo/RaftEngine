@@ -8,15 +8,22 @@ set(ENGINE_PUBLIC_INCLUDE
 )
 
 set(ENGINE_PRIVATE_INCLUDE
+	src/RaftEngineCore/Window.hpp
+)
+
+set(ENGINE_PRIVATE_SOURCE
 	src/RaftEngineCore/Application.cpp
+	src/RaftEngineCore/Window.cpp
 )
 
 add_library(${ENGINE_PROJECT_NAME} STATIC
 	${ENGINE_PUBLIC_INCLUDE}
 	${ENGINE_PRIVATE_INCLUDE}
+	${ENGINE_PRIVATE_SOURCE}
 )
 
 target_include_directories(${ENGINE_PROJECT_NAME} PUBLIC includes)
+target_include_directories(${ENGINE_PROJECT_NAME} PRIVATE src)
 target_compile_features(${ENGINE_PROJECT_NAME} PUBLIC cxx_std_17)
 
 add_subdirectory(../external/glfw ${CMAKE_CURRENT_BINARY_DIR}/glfw)
