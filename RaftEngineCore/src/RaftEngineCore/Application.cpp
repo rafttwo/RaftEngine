@@ -28,7 +28,7 @@ namespace RaftEngine {
         m_event_dispatcher.add_event_listener<EventWindowResize>(
             [](EventWindowResize& event)
             {
-                LOG_INFO("[Resized] Mouse moved to {0}x{1}", event.width, event.height);
+                LOG_INFO("[Resized] Window resized to {0}x{1}", event.width, event.height);
             });
 
         m_event_dispatcher.add_event_listener<EventWindowClose>(
