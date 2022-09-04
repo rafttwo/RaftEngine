@@ -1,6 +1,7 @@
 #pragma once
 
 #include <memory>
+#include "RaftEngineCore/Event.hpp"
 
 namespace RaftEngine {
 	class Application
@@ -21,5 +22,7 @@ namespace RaftEngine {
 	private:
 		std::unique_ptr<class Window> m_pWindow;
 
+		EventDispatcher m_event_dispatcher;
+		bool m_bCloseWindow = false;
 	};
 }

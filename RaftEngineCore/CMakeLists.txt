@@ -4,6 +4,7 @@ set(ENGINE_PROJECT_NAME RaftEngineCore)
 
 set(ENGINE_PUBLIC_INCLUDE
 	includes/RaftEngineCore/Application.hpp
+	includes/RaftEngineCore/Event.hpp
 	includes/RaftEngineCore/Log.hpp
 )
 
