@@ -10,17 +10,27 @@ set(ENGINE_PUBLIC_INCLUDE
 
 set(ENGINE_PRIVATE_INCLUDE
 	src/RaftEngineCore/Window.hpp
+	src/RaftEngineCore/Rendering/OpenGL/ShaderProgram.hpp
 )
 
 set(ENGINE_PRIVATE_SOURCE
 	src/RaftEngineCore/Application.cpp
 	src/RaftEngineCore/Window.cpp
+	src/RaftEngineCore/Rendering/OpenGL/ShaderProgram.cpp
 )
 
-add_library(${ENGINE_PROJECT_NAME} STATIC
+set(ENGINE_ALL_SOURCE
 	${ENGINE_PUBLIC_INCLUDE}
 	${ENGINE_PRIVATE_INCLUDE}
 	${ENGINE_PRIVATE_SOURCE}
+)
+
+add_library(${ENGINE_PROJECT_NAME} STATIC
+	${ENGINE_ALL_SOURCE}
+)
+
+source_group(TREE ${CMAKE_CURRENT_SOURCE_DIR} FILES
+	${ENGINE_ALL_SOURCE}
 )
 
 target_include_directories(${ENGINE_PROJECT_NAME} PUBLIC includes)
