@@ -11,12 +11,14 @@ set(ENGINE_PUBLIC_INCLUDE
 set(ENGINE_PRIVATE_INCLUDE
 	src/RaftEngineCore/Window.hpp
 	src/RaftEngineCore/Rendering/OpenGL/ShaderProgram.hpp
+	src/RaftEngineCore/Rendering/OpenGL/VertexBuffer.hpp
 )
 
 set(ENGINE_PRIVATE_SOURCE
 	src/RaftEngineCore/Application.cpp
 	src/RaftEngineCore/Window.cpp
 	src/RaftEngineCore/Rendering/OpenGL/ShaderProgram.cpp
+	src/RaftEngineCore/Rendering/OpenGL/VertexBuffer.cpp
 )
 
 set(ENGINE_ALL_SOURCE
